@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampCleanup", "CampCleanup\CampCleanup.csproj", "{35174046-9674-4F7B-983D-945824EE5B41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampCleanup.Test", "CampCleanup.Test\CampCleanup.Test.csproj", "{F5359056-7CF0-4AE7-8611-1D137994D140}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35174046-9674-4F7B-983D-945824EE5B41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35174046-9674-4F7B-983D-945824EE5B41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35174046-9674-4F7B-983D-945824EE5B41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35174046-9674-4F7B-983D-945824EE5B41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5359056-7CF0-4AE7-8611-1D137994D140}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5359056-7CF0-4AE7-8611-1D137994D140}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5359056-7CF0-4AE7-8611-1D137994D140}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5359056-7CF0-4AE7-8611-1D137994D140}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53BFE443-9D12-4F58-9E7C-012E6FD8DC42}
+	EndGlobalSection
+EndGlobal
