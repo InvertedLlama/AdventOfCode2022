@@ -18,7 +18,7 @@
 
             foreach (Job job in parsedInput)
             {
-                var overlap = FindOverlap(job);
+                var overlap = FindContains(job);
 
                 if (overlap)
                     result.Add(job);
@@ -26,7 +26,7 @@
             return result;
         }
 
-        private static bool FindOverlap(Job job)
+        private static bool FindContains(Job job)
         {
             foreach (Job.Assignment assignment in job.assignments)
             {
@@ -45,32 +45,38 @@
             return false;
         }
 
-        public static List<Job> Temp(List<Job> parsedInput)
+        public static List<Job> GetOverlappingAssignments(List<Job> parsedInput)
         {
             var result = new List<Job>();
 
-            foreach(Job job in parsedInput)
+            foreach (Job job in parsedInput)
             {
-                var overlap = false;
-
-                foreach (Job jobTocompareTo in parsedInput)
-                {
-                    if (jobTocompareTo != job)
-                    {
-                        foreach (Job.Assignment assignment in job.assignments)
-                        {
-                            foreach (Job.Assignment assignmentTocompareTo in jobTocompareTo.assignments)
-                            {
-                                overlap = assignment.Start >= assignmentTocompareTo.Start && assignment.End <= assignmentTocompareTo.End;
-                            }
-                        }
-                    }
-                }
+                var overlap = FindOverlaps(job);
 
                 if (overlap)
                     result.Add(job);
             }
             return result;
+        }
+
+        private static bool FindOverlaps(Job job)
+        {
+            foreach (Job.Assignment assignment in job.assignments)
+            {
+                foreach (Job.Assignment assignmentTocompareTo in job.assignments)
+                {
+                    if (assignment != assignmentTocompareTo)
+                    {
+                        if ((assignment.Start >= assignmentTocompareTo.Start && assignment.Start <= assignmentTocompareTo.End) ||
+                            (assignmentTocompareTo.Start >= assignment.Start && assignmentTocompareTo.Start <= assignment.End))
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            return false;
         }
     }
 }
